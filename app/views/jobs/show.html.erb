@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>
-  <%= @job.title %>
-  <% if @job.premium %>
-    <strong>(premium)</strong>
-  <% end %>
-</h1>
+<h1><%= job_title(@job) %></h1>
 
 <%= simple_format @job.description %>
 
