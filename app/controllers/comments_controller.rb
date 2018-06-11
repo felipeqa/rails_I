@@ -10,6 +10,12 @@ class CommentsController < ApplicationController
     redirect_to @job
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to @comment.job, notice: "Comment destroyed with sucess!"
+  end
+
   private
 
   def comment_params
