@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :jobs do
     post 'comments', to: 'comments#create'
   end
+  delete 'comments/:id', to: 'comments#destroy', as: :comment
   get 'hello/world'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
