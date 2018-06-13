@@ -9,7 +9,7 @@ class JobsController < ApplicationController
 
   def premium
     @jobs = Job.where(premium: true).most_recent.
-    paginate(page: params[:page], per_page: 4)
+    paginate(page: params[:page], per_page: 10)
   end
 
   # GET /jobs/1
