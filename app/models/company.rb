@@ -15,4 +15,8 @@ class Company < ApplicationRecord
   def password
     @password
   end
+
+  def valid_password?(password_to_validate)
+    BCrypt::Password.new(encrypted_password) == password_to_validate
+  end
 end
