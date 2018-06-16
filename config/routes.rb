@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :jobs do
     post 'comments', to: 'comments#create'
   end
+
+  resources :companies, only: [:new, :create]
   delete 'comments/:id', to: 'comments#destroy', as: :comment
   get 'hello/world'
 
