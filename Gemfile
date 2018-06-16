@@ -65,4 +65,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'will_paginate'
 gem 'twitter-bootstrap-rails'
 gem 'bcrypt-ruby', '~> 3.0'
-gem 'protected_attributes_continued'
