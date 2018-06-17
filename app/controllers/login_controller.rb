@@ -3,9 +3,9 @@ class LoginController < ApplicationController
   end
 
   def create
-    company = Company.find_by_email(params.require[:company][:email])
+    company = Company.find_by_email(params[:company][:email])
 
-    if company && company.valid_password?(params.require[:company][:password])
+    if company && company.valid_password?(params[:company][:password])
       session[:company_id] = company.id
       redirect_to root_path
     else
