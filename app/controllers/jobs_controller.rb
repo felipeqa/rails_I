@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_company, only:[:new, :create]
 
   # GET /jobs
   # GET /jobs.json
@@ -75,5 +76,11 @@ class JobsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
       params.require(:job).permit(:title, :description, :premium)
+    end
+
+    def authorize_company
+      unless current_company
+        redirect_to root_path, alert: "You need to login to continue"
+      end
     end
 end
