@@ -2,6 +2,7 @@ require 'bcrypt'
 
 class Company < ApplicationRecord
 
+  has_many :jobs
   validates_presence_of :email, :name, :password
   validates_uniqueness_of :email
   validates_length_of :password, minimum: 6
