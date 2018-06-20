@@ -25,6 +25,7 @@ class JobsController < ApplicationController
 
   # GET /jobs/1/edit
   def edit
+    @job = current_company.jobs.find(params[:id])
   end
 
   # POST /jobs
@@ -46,6 +47,8 @@ class JobsController < ApplicationController
   # PATCH/PUT /jobs/1
   # PATCH/PUT /jobs/1.json
   def update
+    @job = current_company.jobs.find(params[:id])
+
     respond_to do |format|
       if @job.update(job_params)
         format.html { redirect_to @job, notice: 'Job was successfully updated.' }
@@ -60,6 +63,8 @@ class JobsController < ApplicationController
   # DELETE /jobs/1
   # DELETE /jobs/1.json
   def destroy
+    @job = current_company.jobs.find(params[:id])
+    
     @job.destroy
     respond_to do |format|
       format.html { redirect_to jobs_url, notice: 'Job was successfully destroyed.' }
