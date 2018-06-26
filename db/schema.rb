@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2018_06_19_012454) do
     t.integer "job_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_comments_on_job_id"
   end
 
   create_table "companies", force: :cascade do |t|
