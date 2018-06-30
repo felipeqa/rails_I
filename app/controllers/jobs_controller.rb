@@ -5,11 +5,11 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.most_recent.all
+    @jobs = Job.most_recent.includes(:company).all
   end
 
   def premium
-    @jobs = Job.where(premium: true).most_recent.
+    @jobs = Job.where(premium: true).most_recent.includes(:company).
     paginate(page: params[:page], per_page: 10)
   end
 
@@ -64,7 +64,7 @@ class JobsController < ApplicationController
   # DELETE /jobs/1.json
   def destroy
     @job = current_company.jobs.find(params[:id])
-    
+
     @job.destroy
     respond_to do |format|
       format.html { redirect_to jobs_url, notice: 'Job was successfully destroyed.' }
