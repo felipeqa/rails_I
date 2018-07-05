@@ -21,7 +21,7 @@
               <li><%= link_to "Logout", companies_login_path, method: :delete %></li>
               <li><a>Logged as <%= current_company.name %></a></li>
               <% else %>
-              <li><%= link_to "New company", new_company_path %></li>
+              <li><%= link_to "New Company", new_company_path %></li>
               <li><%= link_to "Login", companies_login_path %></li>
               <% end %>
             </ul>
