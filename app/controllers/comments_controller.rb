@@ -2,12 +2,20 @@ class CommentsController < ApplicationController
   def create
     @job = Job.find(params[:job_id])
     @comment = @job.comments.build(comment_params)
-    if @comment.save
-      flash[:notice] = "Comment was created with sucess!"
-    else
-      flash[:alert] = "Please Fill in all fields to create a comment."
+
+    respond_to do |format|
+      format.html do
+        if @comment.save
+          flash[:notice] = "Comment was created with sucess!"
+        else
+          flash[:alert] = "Please Fill in all fields to create a comment."
+        end
+        redirect_to @job
+      end
+      format.js do
+        @comment.save
+      end
     end
-    redirect_to @job
   end
 
   def destroy
