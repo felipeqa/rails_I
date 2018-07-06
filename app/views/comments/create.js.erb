@@ -1,1 +1,7 @@
-alert('it works!');
+<% if @comment.errors.empty? %>
+  $('#comments').append('<%=j render(@comment) %>');
+  $('#new_comment')[0].reset();
+  alert('Comment was created with sucess!');
+<% else %>
+  alert('Please fill in all fields to create a comment!');
+<% end %>
