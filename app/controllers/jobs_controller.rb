@@ -9,13 +9,20 @@ class JobsController < ApplicationController
   end
 
   def premium
-    @jobs = Job.where(premium: true).most_recent.includes(:company).
-    paginate(page: params[:page], per_page: 10)
+    @jobs = Job.where(premium: true).most_recent.includes(:company)
+               .paginate(page: params[:page], per_page: 10)
   end
 
   # GET /jobs/1
   # GET /jobs/1.json
   def show
+    @job = Job.find(params[:id])
+    @comments = @job.comments.order('id desc')
+
+    respond_to do |format|
+      format.html #show.html.erb
+      format.json { render json: @job }
+    end
   end
 
   # GET /jobs/new
