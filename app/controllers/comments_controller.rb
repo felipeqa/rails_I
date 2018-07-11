@@ -3,18 +3,20 @@ class CommentsController < ApplicationController
     @job = Job.find(params[:job_id])
     @comment = @job.comments.build(comment_params)
 
+    if sucess = @comment.save
+      CompanyMailer.new_comment(@job, @comment).deliver
+    end
+
     respond_to do |format|
       format.html do
-        if @comment.save
+        if sucess
           flash[:notice] = "Comment was created with sucess!"
         else
           flash[:alert] = "Please Fill in all fields to create a comment."
         end
         redirect_to @job
       end
-      format.js do
-        @comment.save
-      end
+      format.js
     end
   end
 
