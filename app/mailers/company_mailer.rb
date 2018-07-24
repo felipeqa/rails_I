@@ -8,8 +8,8 @@ class CompanyMailer < ApplicationMailer
   #
   def new_comment(job, comment)
     @job = job
-    @comment  = comment
+    @comment = comment
     @company = job.company
-    mail to: @company.email, subject: "New comment received"
+    mail to: @company.email, subject: 'New comment received'
   end
 end
