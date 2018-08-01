@@ -17,7 +17,7 @@
               <li><%= link_to t("menu.hello_world"), hello_world_path %></li>
 
               <% if current_company %>
-              <li><%= link_to t("menu.new_jobs"), new_job_path %></li>
+              <li><%= link_to t("menu.new_job"), new_job_path %></li>
               <li><%= link_to t("menu.logout"), companies_login_path, method: :delete %></li>
               <li><a>Logged as <%= current_company.name %></a></li>
               <% else %>
