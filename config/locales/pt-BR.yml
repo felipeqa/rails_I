@@ -15,14 +15,19 @@ pt-BR:
   links:
     edit: "Editar"
     back: "Voltar"
+    destroy: "Apagar"
+    destroy_confirmation: "Tem certeza?"
 
   comments:
     count: "comentários"
+    comment:
+      said: "%{name} disse"
+      sent: "Enviado %{timestamp} atrás"
 
 # Usando o escopo em views com base no Controller e Actions atuais ex: jobs#index
   jobs:
     index:
       listing: "Lista de Vagas"
     show:
-      new_comment: "SEnviar novo comentário"
+      new_comment: "Enviar novo comentário"
       comments: "Comentários"

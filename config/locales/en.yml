@@ -46,9 +46,14 @@ en:
   links:
     edit: "Edit"
     back: "Back"
+    destroy: "Destroy"
+    destroy_confirmation: "Are you sure?"
 
   comments:
     count: "comments"
+    comment:
+      said: "%{name} said"
+      sent: "Sent %{timestamp} ago"
 
 # Usando o escopo em views com base no Controller e Actions atuais ex: jobs#index
   jobs:
