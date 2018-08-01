@@ -42,3 +42,8 @@ en:
     new_company : "New company"
     login : "Login"
     logout: "Logout"
+
+# Usando o escopo em views com base no Controller e Actions atuais ex: jobs#index
+  jobs:
+    index:
+      listing: "Listing Jobs"

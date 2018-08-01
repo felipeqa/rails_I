@@ -11,3 +11,8 @@ pt-BR:
     new_company : "Nova empresa"
     login : "Entrar"
     logout: "Sair"
+
+# Usando o escopo em views com base no Controller e Actions atuais ex: jobs#index
+  jobs:
+    index:
+      listing: "Lista de Vagas"
