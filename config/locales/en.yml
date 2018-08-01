@@ -30,4 +30,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  company_mailer:
+    new_comment:
+      subject: "New comment received"
