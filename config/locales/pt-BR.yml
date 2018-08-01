@@ -2,3 +2,12 @@ pt-BR:
   company_mailer:
     new_comment:
       subject: "Novo comentário recebido"
+
+  menu:
+    premium_jobs : "Empregos Premium"
+    all_jobs : "Todos Empregos"
+    new_job : "Novo emprego"
+    logged_as : "Acessando com"
+    new_company : "Nova empresa"
+    login : "Entrar"
+    logout: "Sair"
