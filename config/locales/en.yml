@@ -43,7 +43,17 @@ en:
     login : "Login"
     logout: "Logout"
 
+  links:
+    edit: "Edit"
+    back: "Back"
+
+  comments:
+    count: "comments"
+
 # Usando o escopo em views com base no Controller e Actions atuais ex: jobs#index
   jobs:
     index:
       listing: "Listing Jobs"
+    show:
+      new_comment: "Send a new comment"
+      comments: "Comments"

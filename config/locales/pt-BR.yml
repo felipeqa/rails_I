@@ -12,7 +12,17 @@ pt-BR:
     login : "Entrar"
     logout: "Sair"
 
+  links:
+    edit: "Editar"
+    back: "Voltar"
+
+  comments:
+    count: "comentários"
+
 # Usando o escopo em views com base no Controller e Actions atuais ex: jobs#index
   jobs:
     index:
       listing: "Lista de Vagas"
+    show:
+      new_comment: "SEnviar novo comentário"
+      comments: "Comentários"
